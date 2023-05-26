@@ -21,6 +21,9 @@ st.title("Pistas de esquí del mundo")
 # Vamos a subir una foto desde url de internet
 st.image("https://cdn.shopify.com/s/files/1/0012/8647/1793/articles/portada-definitiva-freeride.jpg?v=1622620556", width=800 )
 
+# O tambien la podemos subir nosotros directamente arrastrando los archivos
+uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
+st.image(uploaded_files)
 
 # Creamos una caja con opciones para poder dirigirnos 
 menu = st.sidebar.selectbox("Selecciona la página", ['Home','Filtros', 'Datasets'])
@@ -91,11 +94,13 @@ if menu == "Home":
 
         # Box Plot con los precios por contienete 
 
-    # Con esto ordenamos los continentes para que se vean ordenados, tan solo los continentes y esto lo sacamos con index.
-    pistas_orden = pistas.groupby('Continente')[['Precio']].mean().sort_values(ascending=False, by='Precio').index
-    
-    plt.figure(figsize=(12,6))
-    sns.boxplot(x = pistas['Continente'],y = pistas['Precio'], order=pistas_orden)
+        # Con esto ordenamos los continentes para que se vean ordenados, tan solo los continentes y esto lo sacamos con index.
+        pistas_orden = pistas.groupby('Continente')[['Precio']].mean().sort_values(ascending=False, by='Precio').index
+
+        plt.figure(figsize=(12,6))
+        sns.boxplot(x = pistas['Continente'],y = pistas['Precio'], order=pistas_orden)
+
+        st.pyplot(plt)
 
 
 elif menu == 'Filtros':
