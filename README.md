@@ -6,7 +6,7 @@ Durante este taller, aprenderemos los conceptos básicos de Streamlit y cómo ut
 
 ## Contenido del taller:
 
-1. Introducción a Streamlit:
+** Introducción a Streamlit: **
 
 - ¿Qué es Streamlit y por qué es tan popular?
 - Instalación y configuración del entorno de desarrollo.
