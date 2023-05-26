@@ -4,7 +4,7 @@
 
 Durante este taller, aprenderemos los conceptos básicos de Streamlit y cómo utilizarlo para crear rápidamente aplicaciones web interactivas. Comenzaremos desde cero, por lo que no se requiere experiencia previa en desarrollo web. A medida que avanzamos, veremos cómo agregar visualizaciones de datos, widgets interactivos y personalizar el aspecto de nuestras aplicaciones.
 
-La clase practica va a ser impartida para los alumnos del Bootcamp de Data Science de [Bootcamp de Data Science de The Bridge](https://www.thebridge.tech/campus/bootcamps-madrid), donde me han dado la oportunidad de traer una herramienta necesaria para el mundo de BI, y que diariamente nos podemos ver con la necesidad de visualizar datos de una forma precisa y sencilla. 
+La clase practica va a ser impartida para los alumnos del Bootcamp de Data Science de [The Bridge](https://www.thebridge.tech/campus/bootcamps-madrid), donde me han dado la oportunidad de traer una herramienta necesaria para el mundo de BI, y que diariamente nos podemos ver con la necesidad de visualizar datos de una forma precisa y sencilla. 
 
 ## Contenido del taller:
 
