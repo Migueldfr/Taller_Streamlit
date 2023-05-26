@@ -6,31 +6,34 @@ Durante este taller, aprenderemos los conceptos básicos de Streamlit y cómo ut
 
 ## Contenido del taller:
 
-    1. Introducción a Streamlit:
+1. Introducción a Streamlit:
 
 - ¿Qué es Streamlit y por qué es tan popular?
 - Instalación y configuración del entorno de desarrollo.
 
-    2. Creación de una aplicación básica:
+2. Creación de una aplicación básica:
 
 - Estructura básica de una aplicación de Streamlit.
 - Ejecución y visualización de la aplicación.
 
-    ### Explorando los componentes de Streamlit:
+3. Explorando los componentes de Streamlit:
 
 - Agregar texto, títulos y secciones a nuestra aplicación.
 - Incorporar imágenes y multimedia.
 - Crear y personalizar gráficos interactivos.
 - Utilizar widgets para interactuar con los datos.
-    ### Personalización avanzada:
+
+4. Personalización avanzada:
 
 - Estilizar la apariencia de la aplicación.
 - Agregar temas y estilos personalizados.
 - Implementar diferentes diseños y layouts.
-    ### Despliegue de la aplicación:
+
+5. Despliegue de la aplicación:
 
 - Preparar nuestra aplicación para ser compartida.
 - Opciones de despliegue en servidores locales y en la nube.
 
+--------
 En este taller, trabajaremos en ejemplos prácticos y guiados para ayudarte a comprender y familiarizarte con Streamlit. Al finalizar, tendrás las bases necesarias para desarrollar tus propias aplicaciones web interactivas y compartir tus análisis de datos de una manera sencilla y atractiva.
 
