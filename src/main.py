@@ -109,6 +109,100 @@ if menu == 'Home':
 
         st.plotly_chart(fig, use_container_width=True)
 
+elif menu == 'Filtros':
+
+    st.sidebar.header('Opciones a filtrar: ')
+
+
+    continente = st.sidebar.multiselect('Seleccionamos Continente: ',
+                        options = pistas['Continente'].unique(),
+                        default= pistas['Continente'].unique())
+    
+    pais = st.sidebar.multiselect('Seleccionamos Pais: ',
+                        options = pistas['Pais'].unique(),
+                        default= pistas['Pais'].unique())
+    
+    rate = st.sidebar.slider('Selecionar valoracion: ', min(pistas['Rate']), max(pistas['Rate']), (min(pistas['Rate']), max(pistas['Rate'])))
+
+
+    precio = st.sidebar.slider('Selecionar precio: ', min(pistas['Precio']), max(pistas['Precio']), (min(pistas['Precio']), max(pistas['Precio'])))
+
+    df_seleccion = pistas.query('Continente == @continente & Pais == @pais & Rate >= @rate[0] & Rate <= @rate[1] & Precio >= @precio[0] & Precio <= @precio[1]')
+
+    st.markdown('------')
+
+    rate = df_seleccion[['Nombre del Resort','Continente','Pais','Rate']].sort_values(by='Rate', ascending=False)
+
+    rate['Orden'] = range(len(rate))
+
+    resort_order = rate.sort_values(by='Orden')['Nombre del Resort'].unique()
+
+    fig = px.bar(rate.head(20), x='Nombre del Resort', y='Rate', color='Continente',
+                    category_orders={'Nombre del Resort': resort_order},
+                 labels={'Nombre del Resort': 'Resorts', 'Rate': 'Rate'},
+                 hover_data=['Continente'], text='Rate')
+
+    fig.update_layout(title_text='Valoración', xaxis_tickangle=85, width=1000, height=800)
+    fig.update_xaxes(title = 'Resorts')
+    fig.update_yaxes(title = 'Rate')
+
+    st.plotly_chart(fig, use_container_width=True)
+
+    st.markdown('----')
+
+    precio = df_seleccion[['Nombre del Resort','Continente','Precio']].sort_values(by='Precio', ascending=False)
+
+    precio['Orden'] = range(len(rate))
+
+    resort_order = precio.sort_values(by='Orden')['Nombre del Resort'].unique()
+
+    fig = px.bar(precio.head(20), x='Nombre del Resort', y='Precio', color='Continente',
+                    category_orders={'Nombre del Resort': resort_order},
+                 labels={'Nombre del Resort': 'Resorts', 'Rate': 'Rate'},
+                 hover_data=['Continente'], text='Precio')
+
+    fig.update_layout(title_text='Precio', xaxis_tickangle=85, width=1000, height=800)
+    fig.update_xaxes(title = 'Resorts')
+    fig.update_yaxes(title = 'Precio')
+
+    st.plotly_chart(fig, use_container_width=True)
+
+elif menu == 'Dataset':
+
+    nombre = st.text_input('Nombre del resort', "")
+    continente = st.selectbox('Continente', pistas['Continente'].unique())
+    rate = st.slider('Cual es la valoracion?', 1,5)
+    review = st.text_area('Comentario',"")
+    precio = st.text_input('Que precio es el forfait?', "")
+    dia = st.date_input(f"Hoy es... ", datetime.datetime.now())
+
+    nueva_data = []
+
+    nueva_data.append({
+        'Nombre del Resort': nombre ,
+        'Continente':continente,
+        'Rate' : rate,
+        'Comentario' : review,
+        'Precio' : precio,
+        'Dia' : dia
+    })
+
+    if st.button('Submit'):
+        nueva_data.append({
+        'Nombre del Resort': nombre ,
+        'Continente':continente,
+        'Rate' : rate,
+        'Comentario' : review,
+        'Precio' : precio,
+        'Dia' : dia
+    })
+    
+    df = pd.DataFrame(nueva_data)
+    st.dataframe(df)
+
+    if st.button('Export to CSV'):
+        df.to_csv('data/data.csv')
+        st.success('CSV exportado correctamente')
 
         
 

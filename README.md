@@ -1,5 +1,7 @@
 # Taller de Streamlit
 
+![video](src/static/streamlit.gif)
+
 ¡Bienvenidos al taller de Streamlit! En este taller, exploraremos una poderosa herramienta que nos permite crear y compartir aplicaciones web interactivas para el análisis de datos y la visualización. Streamlit es una biblioteca de Python fácil de usar y altamente intuitiva, ideal para aquellos que están dando sus primeros pasos en el desarrollo de aplicaciones web.
 
 Durante este taller, aprenderemos los conceptos básicos de Streamlit y cómo utilizarlo para crear rápidamente aplicaciones web interactivas. Comenzaremos desde cero, por lo que no se requiere experiencia previa en desarrollo web. A medida que avanzamos, veremos cómo agregar visualizaciones de datos, widgets interactivos y personalizar el aspecto de nuestras aplicaciones.
